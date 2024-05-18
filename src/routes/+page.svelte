@@ -20,7 +20,7 @@
 
 	<a href="/movies/{data.featured.id}">
 		<img
-			class="backdrop md:h-[50vh] object-cover"
+			class="backdrop md:h-[50lvh] object-cover"
 			alt={data.featured.title}
 			src={media(backdrop.file_path, 1280)}
 			style="aspect-ratio: {backdrop.aspect_ratio}"
@@ -28,13 +28,15 @@
 		/>
 
 		{#if logo}
-			<img
-				class="absolute w-[20%] md:w-[10%] left-10"
-				alt={data.featured.title}
-				src={media(logo.file_path, 500)}
-				style="aspect-ratio: {logo.aspect_ratio}"
-				use:smoothload
-			/>
+			<div class="absolute h-full w-full flex items-end pb-10 justify-center">
+				<img
+					class="w-1/2 md:w-1/3 drop-shadow"
+					alt={data.featured.title}
+					src={media(logo.file_path, 500)}
+					style="aspect-ratio: {logo.aspect_ratio}"
+					use:smoothload
+				/>
+			</div>
 		{/if}
 	</a>
 </div>
